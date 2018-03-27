@@ -19,9 +19,33 @@ namespace WpfAppHoofdstuk11
     /// </summary>
     public partial class MainWindow : Window
     {
+        Sphere s = new Sphere();
+        Bubble b = new Bubble();
+        Ball ba = new Ball();
+
         public MainWindow()
         {
             InitializeComponent();
+            b.CreateEllipse(Canvas);
+            b.X = 200;
+            s.CreateEllipse(Canvas);
+            ba.CreateEllipse(Canvas);
+
+        }
+
+        private void Button1_Click(object sender, RoutedEventArgs e)
+        {
+            b.MoveVertical(20);
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            ba.MoveRight(10);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ba.MoveLeft(10);
         }
     }
 }
